@@ -24,7 +24,6 @@ before prepare_action => sub {
     
     if ($path =~ /^(.*)\.css$/) {
         my $filebase = $1;
-        
         if (!$c->_locate_static_file($path)) {
             if ($c->_locate_static_file( $filebase . '.sass' )) {
                 $c->_is_sass(1);
